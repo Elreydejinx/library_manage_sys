@@ -1,30 +1,16 @@
+# author.py
 class Author:
+    def __init__(self, name, biography):
+        self.__name = name
+        self.__biography = biography
 
-    def __init__(self, author, biograrphy):
-        self.author = author
-        self.biography = biograrphy
-        
+    @property
+    def name(self):
+        return self.__name
 
-    def author_info(self):
-        print(f'Author: {self.author}')
-        print(f'Biography: {self.biography}')
+    @property
+    def biography(self):
+        return self.__biography
 
-    def get_author_info(self):
-        return self.author
-   
-    def set_author_info(self,author):
-        self.author = input('enter authors name:')
-        print(author)
-
-    def get_biography(self):
-        return self.biography
-    
-    def set_biography(self,biography):
-        self.biography = input(f'enter biography name:')
-        print(biography)
-
-
-author_info = input('enter author:')
-biography = input('enter biography:')
-print(author_info)
-print(biography)
+    def __str__(self):
+        return f"Name: {self.name}, Biography: {self.biography}"

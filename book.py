@@ -1,54 +1,35 @@
+# book.py
 class Book:
+    def __init__(self, title, author, genre, pub_date):
+        self.__title = title
+        self.__author = author
+        self.__genre = genre
+        self.__pub_date = pub_date
+        self.__availability = True
 
-    def __init__(self, title, author, genre, publication_date):
-        self.title = title
-        self.author = author
-        self. genre = genre
-        self.publication_date = publication_date
-        self.is_available = True
+    @property
+    def title(self):
+        return self.__title
 
-          
+    @property
+    def author(self):
+        return self.__author
 
-    def add_a_book(self):
-        title = input('enter title:')
-        author = input('enter author:')
-        genre = input('enter genre:')
-        publication_date = input('enter publication date:')
-        book_added= {title,
-                       author,
-                       genre,
-                       publication_date}
-        print(f'this book: \n{book_added} wad added ')
-    
-    def get_add_a_book(self):
-        return self.author
+    @property
+    def genre(self):
+        return self.__genre
 
-    def set_add_a_book(self, author):
-        self.author = add_a_book
-        print(author)
+    @property
+    def pub_date(self):
+        return self.__pub_date
 
+    @property
+    def availability(self):
+        return self.__availability
 
-    def borrowed_books(self):
-        book_title = input('enter desired title:')
-        book_author = input('enter authors name:')
-        book_genre = input('enter genre:')
-        book_publication_date =input('enter publication date:')
-        borrowed_book = {book_title, 
-                         book_author,
-                         book_genre,
-                         book_publication_date}
-        print(f'{borrowed_book} was borrowed')
-    
-    def get_borrowed_books(self):
-        return self.title
-    
-    def set_borrowed_books(self,title):
-        self.title = borrowed_books
-        print(title)
-    
-    
-add_a_book = input('enter title:'),input('enter author:'),input('enter genre:'),input('enter publication date:') 
-print(add_a_book)
+    @availability.setter
+    def availability(self, status):
+        self.__availability = status
 
-borrowed_books = input('enter borrowed book:'), input('enter author:'), input('enter genre:'), input('enter publication date:')
-print(borrowed_books)
+    def __str__(self):
+        return f"Title: {self.title}, Author: {self.author}, Genre: {self.genre}, Publication Date: {self.pub_date}, Available: {self.availability}"
